@@ -21,8 +21,15 @@ jobs:
 
     strategy:
       matrix:
-        driver-opts: [""]
-        platforms: ["linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le"]
+        number: [0, 1]
+        include:
+          - driver-opts: ""
+          - number: 0
+            platforms: ""
+            tag: single-platform
+          - number: 1
+            platforms: "linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le"
+            tag: multi-platform
 
     timeout-minutes: 5
 
@@ -53,4 +60,4 @@ jobs:
           file: ./Dockerfile
           platforms: ${{ matrix.platforms }}
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tag }}
