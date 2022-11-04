@@ -22,5 +22,5 @@ RUN echo "n"
 
 CMD ["python --version"]
 
-# LABEL org.opencontainers.image.description "Description from org.opencontainers.image.description"
+LABEL org.opencontainers.image.description "Description from org.opencontainers.image.description"
 LABEL foo=bar
