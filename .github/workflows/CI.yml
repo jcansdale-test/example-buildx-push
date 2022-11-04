@@ -64,4 +64,4 @@ jobs:
           platforms: ${{ matrix.platforms }}
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tag }}
-          labels: annotation-index.org.opencontainers.image.description=DESCRIPTION
+          outputs: name=annotation-index.org.opencontainers.image.description=DESCRIPTION
