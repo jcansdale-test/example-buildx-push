@@ -74,4 +74,4 @@ jobs:
           platforms: ${{ matrix.platforms }}
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tag }}
-          outputs: type=image,name=annotation-${{.matrix.annotation-type }}.org.opencontainers.image.description=DESCRIPTION
+          outputs: type=image,name=annotation-${{ matrix.annotation-type }}.org.opencontainers.image.description=DESCRIPTION
