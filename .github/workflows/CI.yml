@@ -21,7 +21,7 @@ jobs:
 
     strategy:
       matrix:
-        number: [0,1,2,3]
+        number: [0,1]
         include:
           - driver-opts: ""
           - number: 0
