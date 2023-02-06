@@ -27,19 +27,9 @@ jobs:
           - number: 0
             platforms: ""
             tag: single-platform
-            annotation-type: manifest
           - number: 1
             platforms: "linux/386,linux/amd64"
-            tag: multi-platform-manifest-descriptor
-            annotation-type: manifest-descriptor
-          - number: 2
-            platforms: "linux/386,linux/amd64"
-            tag: multi-platform-index
-            annotation-type: index
-          - number: 3
-            platforms: "linux/386,linux/amd64"
-            tag: multi-platform-index-descriptor
-            annotation-type: index-descriptor
+            tag: multi-platform
 
     timeout-minutes: 5
 
@@ -74,4 +64,3 @@ jobs:
           platforms: ${{ matrix.platforms }}
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tag }}
-          outputs: type=image,name=annotation-${{ matrix.annotation-type }}.org.opencontainers.image.description=DESCRIPTION
